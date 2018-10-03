@@ -1,0 +1,13 @@
+function controllaDati () {
+	var minimo = document.form1.minimo.value;
+	var massimo = document.form1.massimo.value;
+	//restituisce vero o falso in base a se deve mostrare l'alert
+	mostraAlert(((minimo == "" || massimo == "") || (minimo < 1 || massimo < minimo)?false:true));
+}
+
+function mostraAlert ($ok) {
+	if (!$ok){
+		//se non e' ok...
+		alert("Attenzione: campi mancanti e/o valori errati");
+	}
+}
