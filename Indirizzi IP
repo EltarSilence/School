@@ -1,0 +1,29 @@
+Scrivere un indirizzo di classe C
+E suddividerlo in almeno 3 sottoreti
+Indirizzo IP -> 176.49.5.0
+				10110000.00110001.00000101.00000000
+
+
+Sottoreti -> 10110000.00110001.00000101.11000000
+Create 2^2 sottoreti
+
+N host totali = 2 ^ 8 - 4
+
+00
+01
+10
+11
+
+Reti
+Sottorete 1 -> .... 00000000 (176.49.5.0)
+Sottorete 2 -> .... 01000000 (176.49.5.64)
+Sottorete 3 -> .... 10000000 (176.49.5.128)
+Sottorete 4 -> .... 11000000 (176.49.5.192)
+
+
+Broadcast
+Sottorete 1 -> .... 00111111 (63)
+Sottorete 2 -> .... 01111111 (127)
+Sottorete 3 -> .... 10111111 (191)
+Sottorete 4 -> .... 11111111 (255)
+
