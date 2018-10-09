@@ -28,7 +28,7 @@
 			echo 'Vuoi iscriverti al corso? Costo: &euro;';
 			foreach ($CORSI as $key => $value) {
 				if ($value == $_GET['corso'])
-				echo $COSTI[$key];
+				echo $COSTI[$key]. ' tenuto dal prof. '.$key;
 				$costo = $COSTI[$key];
 			}
 			echo '<form method="post" action="writeFile.php">';

@@ -1,0 +1,3 @@
+Utente "Marco" si e' iscritto al corso di Italiano (Pagati 25)
+Utente "SImone" si e' iscritto al corso di Informatica (Pagati 25)
+Utente "Riccardo" si e' iscritto al corso di Telecomunicazioni (Pagati 25)
