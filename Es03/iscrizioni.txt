@@ -1,3 +1,4 @@
 user=mario,corso=Italiano,costo=25
 user=canips,corso=Italiano,costo=100user=mario,corso=Italiano,costo=25
 user=mario,corso=Italiano,costo=25
+user=mario,corso=Italiano,costo=25

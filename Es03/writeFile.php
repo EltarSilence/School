@@ -18,6 +18,10 @@ function showIscrizioni($materia) {
 
 //da finire visualizzazione
 
+	foreach ($mat_assoc as $key => $value) {
+		echo $key.' => '.$value;
+	}
+
 }
 
 function writeOnFile() {
