@@ -1,4 +1,10 @@
-user=mario,corso=Italiano,costo=25
-user=canips,corso=Italiano,costo=100user=mario,corso=Italiano,costo=25
-user=mario,corso=Italiano,costo=25
-user=mario,corso=Italiano,costo=25
+user=mario,corso=Informatica,costo=25
+user=dio,corso=Religione,costo=0
+user=marco,corso=Italiano,costo=40
+user=aziz,corso=Italiano,costo=30
+user=roberto,corso=Telecomunicazioni,costo=25user=SIliqua,corso=Informatica,costo=25
+user=marco,corso=Informatica,costo=25
+user=simone,corso=Telecomunicazioni,costo=25
+user=rizza,corso=Italiano,costo=25
+user=matteo,corso=Telecomunicazioni,costo=25
+user=carlo,corso=Informatica,costo=25
