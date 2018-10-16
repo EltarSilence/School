@@ -9,7 +9,7 @@ require_once 'writeFile.php';
 	<title>Corsi</title>
 </head>
 <body>
-<h3>Iscriviti al corso</h3>
+<h3>Iscriviti al corso o accedi alla <a href="parteB.php">Parte B</a></h3>
 	<form method="get" action="">
 		<label>Nome: </label><input name="nome"><br>
 		<label>Corso:</label>
@@ -23,7 +23,7 @@ require_once 'writeFile.php';
 		</select>
 		<input type="submit" value="Scopri">
 	</form>
-	<a href="parteB.php">Parte B</a>
+	
 
 
 

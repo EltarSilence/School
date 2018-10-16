@@ -6,7 +6,7 @@
 	<title>Parte B</title>
 </head>
 <body>
-<h3>Estrai le persone iscritte ai corsi</h3>
+<h3>Estrai le persone iscritte ai corsi o <a href="index.php">torna indietro</a></h3>
 	<form method="POST" action="">
 		<select name="corso">
 			<?php
@@ -24,16 +24,35 @@
 	//se mi arrivano dati dal form
 	if(isset($_POST['corso'])) {
 
+		if (filesize('iscrizioni.txt') <= 0){
+			//se il file e' vuoto lo script muore qui
+			die("File delle iscrizioni vuoto!");
+		}
 		$file = fopen('iscrizioni.txt', 'r');
 		$data = fread($file, filesize('iscrizioni.txt'));
 		//lettura file
+		
 		$data = explode("\n", $data);
-		//esplodo per a riga
+		//esplodo per riga
 
+		for ($i = 0; $i<count($data)-1; $i++){
+			//esplodo per singola coppia di informazione
+			$single = explode(',', $data[$i]);
+			
+			//assegno i vari valori
+			$tmp = explode('=', $single[0]);
+			$tmp1 = explode('=', $single[1]);
+
+			//creo un array associativo formato in questo modo
+			//array(partecipante => corso)
+			if ($tmp[0] && $tmp1[0] != null)
+				$mat_assoc[$tmp[1]] = $tmp1[1];
+		}
+		/*
 		foreach ($data as $pair) {
 			//esplodo per singola coppia di informazione
 			$single = explode(',', $pair);
-
+			print_r($single);
 			//assegno i vari valori
 			$tmp = explode('=', $single[0]);
 			$tmp1 = explode('=', $single[1]);
@@ -44,7 +63,7 @@
 				$mat_assoc[$tmp[1]] = $tmp1[1];
 
 		}
-
+*/
 
 		fclose($file);
 
