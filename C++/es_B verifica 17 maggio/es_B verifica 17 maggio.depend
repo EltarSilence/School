@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1495036393 source:i:\progetti codeblocks\es_b verifica 17 maggio\main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+

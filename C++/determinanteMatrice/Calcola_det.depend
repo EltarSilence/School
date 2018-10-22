@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1495834689 source:i:\progetti codeblocks\calcola_det\main.cpp
+	<iostream>
+	<math.h>
+

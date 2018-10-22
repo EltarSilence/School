@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1495036938 source:f:\programmazione - c\es_a verifica 17 maggio\main.cpp
+	<iostream>
+	<stdio.h>
+	<cstdlib>
+	<string>
+

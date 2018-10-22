@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1497213300 source:f:\programmazione - c\eq_2_grado\main.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+
