@@ -1,0 +1,4 @@
+Marco,Carta,2010-05-05,Battisti,Grafica
+Giovanni,Rizza,2000-08-16,Gargnano,Informatica
+Alessandro,Cavedaghi,2000-03-02,Scuola media,Grafica
+Riccardo,Siliqua,2000-12-21,Armenia,Grafica
