@@ -20,19 +20,6 @@
     $iscritti = array();
 
     for ($i=0; $i<count($data); $i++){
-      $studente = getByCSV($data[$i]);
-      $n_c = $studente->nome.' '.$studente->cognome;
-      array_push($iscritti, $n_c);
-    }
-    sort($iscritti);
-
-    for ($i=0; $i<count($iscritti); $i++){
-      echo $iscritti[$i].'<br />';
-    }
-
-    /*
-    versione corretta procedurale
-    for ($i=0; $i<count($data); $i++){
       $datum = explode(",", $data[$i]);
       $n_c = $datum[0].' '.$datum[1];
       array_push($iscritti, $n_c);
@@ -41,7 +28,7 @@
 
     for ($i=0; $i<count($iscritti); $i++){
       echo $iscritti[$i]."<br />";
-    }*/
+    }
 
   ?>
 
