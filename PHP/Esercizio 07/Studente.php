@@ -16,13 +16,15 @@
       $this->indirizzo_r = $indirizzo_r;
     }
 
-    public function getByCSV($studente){
-      $this->nome = $studente[0];
-      $this->cognome = $studente[1];
-      $this->ddn = $studente[2];
-      $this->indirizzo_p = $studente[3];
-      $this->indirizzo_r = $studente[4];
-    }
+    /*public function getByCSV($studente){
+      $obj = new Studente();
+      $studente[0] = $obj->nome;
+      $studente[1] = $obj->cognome;
+      $studente[2] = $obj->ddn;
+      $studente[3] = $obj->indirizzo_p;
+      $studente[4] = $obj->indirizzo_r;
+      return $obj;
+    }*/
 
     public function createCSVstring(){
       $S = ',';
