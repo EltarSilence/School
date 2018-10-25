@@ -5,6 +5,7 @@
 
 <body>
   <h3>Elenco di iscritti</h3>
+  <a href="iscrizione.php">Indietro</a><br /><br />
   <?php
 
     require_once 'Studente.php';
@@ -27,6 +28,7 @@
       }
       $n_c = $studente->getNome().' '.$studente->getCognome();
       array_push($iscritti, $n_c);
+
     }
     sort($iscritti);
 

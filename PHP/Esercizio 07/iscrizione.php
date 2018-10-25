@@ -5,6 +5,7 @@
 
 <body>
   <h3>Iscrizione alla scuola</h3>
+  <a href="elenco.php">Visualizza elenco</a><br /><br />
   <form method="post" action="" name="iscrizione" onsubmit="return controllo()">
     <label>Nome:</label><input name="nome" /><br />
     <label>Cognome:</label><input name="cognome" /><br />
