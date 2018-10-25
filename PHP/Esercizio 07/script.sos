@@ -1,0 +1,15 @@
+function controllo(){
+  var nome = document.iscrizione.nome.value;
+  var cognome = document.iscrizione.cognome.value;
+  var ddn = document.iscrizione.ddn.value;
+  var prov = document.iscrizione.scuola_p.value;
+  var indirizzo = document.iscrizione.indirizzo.value;
+
+  if (nome=="" || cognome=="" || ddn=="" || prov=="" || indiizzo==""){
+    alert("Devi inserire tutti i campi");
+    return false;
+  }
+  else {
+    return true;
+  }
+}

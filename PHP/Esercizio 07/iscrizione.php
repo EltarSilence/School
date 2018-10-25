@@ -30,11 +30,10 @@
     $file = fopen($filename, 'a');
     $csv = $studente->createCSVstring() . "\n";
     fwrite($file, $csv);
-    echo "<h4>Iscrizione registrata</h4>";    
-    #fwrite($txt, $file);
+    echo "<h4>Iscrizione registrata</h4>";
   }
 
 ?>
 
-  <script src="script.js"></script>
+  <script src="script.sos"></script>
 </html>

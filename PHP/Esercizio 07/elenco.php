@@ -19,19 +19,23 @@
     echo 'Iscritti: '.count($data).'<br /><br />';
     $iscritti = array();
 
-
-    /*versione corretta ad oggetti
+    //versione corretta ad oggetti
     for ($i=0; $i<count($data); $i++){
-      $studente = getByCSV($data[$i]);
-      $n_c = $studente->nome.' '.$studente->cognome;
+      if ($data[$i] != "") {
+        $studente = new Studente("","","","","");
+        $studente->getByCSV($data[$i]);
+      }
+      $n_c = $studente->getNome().' '.$studente->getCognome();
       array_push($iscritti, $n_c);
     }
     sort($iscritti);
 
     for ($i=0; $i<count($iscritti); $i++){
       echo $iscritti[$i].'<br />';
-    }*/
+    }
 
+    /*
+    metodo procedurale
     for ($i=0; $i<count($data); $i++){
       $datum = explode(",", $data[$i]);
       $n_c = $datum[0].' '.$datum[1];
@@ -42,6 +46,7 @@
     for ($i=0; $i<count($iscritti); $i++){
       echo $iscritti[$i]."<br />";
     }
+    */
 
   ?>
 
