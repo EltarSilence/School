@@ -5,7 +5,7 @@ function controllo(){
   var prov = document.iscrizione.scuola_p.value;
   var indirizzo = document.iscrizione.indirizzo.value;
 
-  if (nome=="" || cognome=="" || ddn=="" || prov=="" || indiizzo==""){
+  if (nome=="" || cognome=="" || ddn=="" || prov=="" || indirizzo==""){
     alert("Devi inserire tutti i campi");
     return false;
   }
