@@ -1,0 +1,15 @@
+.error {
+  width: 50%;
+  border-radius: 5px;
+  padding: 5px;
+  border: solid 2px black;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+}
+
+.login-box {
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 5px;
+}
