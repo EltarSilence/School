@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if (isset($_SESSION['username'])) {
+    echo '<div class="success">
+    <b>Amministratore loggato: </b> '.$_SESSION['username'].'</div>';
+  }
 ?>
 
 <html>
@@ -17,7 +21,7 @@
     die();
   }
   else {
-    echo 'Ciao '.$_SESSION['username'].', benvenuto!';
+    //loggato
   }
 
 ?>

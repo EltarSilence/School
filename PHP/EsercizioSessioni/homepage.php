@@ -8,7 +8,7 @@
       $logged = false;
       session_start();
       if (!isset($_SESSION['username'])) {
-        echo '<div class="error">
+        echo '<div class="warning">
         Attenzione:
         Devi effettuare il login per inserire i prodotti.
         <a href="login.php">Vai qui</a>

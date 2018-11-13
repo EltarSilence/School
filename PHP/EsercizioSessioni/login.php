@@ -45,6 +45,7 @@
           //loggato
           echo 'ACCESS GRANTED';
           $_SESSION['username'] = $username;
+          header("Location: inserimento.php");
         }
         else {
           //non loggato

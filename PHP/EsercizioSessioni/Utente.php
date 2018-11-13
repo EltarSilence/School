@@ -33,7 +33,7 @@
       var_dump($lines);
       foreach ($lines as $line) {
         $campi = explode(",", $line);
-        if ($u == $campi[3] && $p = $campi[4]){
+        if ($u == $campi[3] && $p == $campi[4]){
           return true;
         }
       }

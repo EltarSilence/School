@@ -8,6 +8,26 @@
   background-color: red;
 }
 
+.warning {
+  width: 50%;
+  border-radius: 5px;
+  padding: 5px;
+  border: solid 2px black;
+  font-weight: bold;
+  color: white;
+  background-color: #CCCC00;
+}
+
+.success {
+  width: 50%;
+  border-radius: 5px;
+  padding: 5px;
+  border: solid 2px black;
+  font-weight: bold;
+  color: white;
+  background-color: #9ACD32;
+}
+
 .login-box {
   padding: 10px;
   border: solid 2px black;
