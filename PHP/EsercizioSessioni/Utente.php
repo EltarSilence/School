@@ -6,12 +6,14 @@
     private $cognome;
     private $email;
     private $username;
+    private $filename;
 
-    function __construct($nome, $cognome, $email, $username) {
-      $this->nome = $nome;
-      $this->cognome = $cognome;
-      $this->email = $email;
-      $this->username = $email;
+    function __construct($filename) {
+      $this->filename = $filename;
+      $this->nome = null;
+      $this->cognome = null;
+      $this->email = null;
+      $this->username = null;
     }
 
     public function getByCSV($utente, $sep){
@@ -22,8 +24,20 @@
       $this->setUsername($utente[3]);
     }
 
-    public function isLogged($u, $p) {
+    public function login($u, $p) {
+      $file = fopen($this->filename, 'r');
+      $userlist = fread($file, filesize($this->filename)-1);
+      fclose($file);
 
+      $lines = explode("\n", $userlist);
+      var_dump($lines);
+      foreach ($lines as $line) {
+        $campi = explode(",", $line);
+        if ($u == $campi[3] && $p = $campi[4]){
+          return true;
+        }
+      }
+      return false;
     }
 
     public function getNome(){

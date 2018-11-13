@@ -1,6 +1,7 @@
 <?php
   require "Utente.php";
   session_start();
+
 ?>
 
 <html>
@@ -38,20 +39,20 @@
 
         $username = $_POST['unm'];
         $password = $_POST['pwd'];
+        $utente = new Utente('utenti.csv');
 
-        $file = fopen('utenti.csv', 'r');
-        $userlist = fread($file, filesize('utenti.csv')-1);
-        $lines = explode("\n", $userlist);
-        $utenti = array();
-
-        foreach ($lines as $line) {
-          $utente = new Utente('','','','');
-          $utente->getByCSV($line);
-          array_push($utenti, $utente->username);
+        if ($utente->login($username, $password)){
+          //loggato
+          echo 'ACCESS GRANTED';
+          $_SESSION['username'] = $username;
+        }
+        else {
+          //non loggato
+          echo '<div class="error">
+          <b>Errore:</b> Credenziali errate.
+          </div>';
         }
 
-        var_dump($lines);
-        fclose($file);
       }
 
     ?>

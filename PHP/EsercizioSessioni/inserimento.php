@@ -16,5 +16,8 @@
     </div>';
     die();
   }
+  else {
+    echo 'Ciao '.$_SESSION['username'].', benvenuto!';
+  }
 
 ?>
