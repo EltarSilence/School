@@ -1,23 +1,20 @@
 <?php
   require "Utente.php";
   session_start();
-
+  if (isset($_SESSION['username'])){
+    echo '<div class="error">
+    <b>Errore:</b> Sei gi&agrave; loggato.
+    </div>';
+    header("Location: homepage.php");
+  }
 ?>
 
-<html>
-  <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <?php
-      if (isset($_SESSION['username'])){
-        echo '<div class="error">
-        <b>Errore:</b> Sei gi&agrave; loggato.
-        </div>';
-        die();
-      }
-    ?>
+    <html>
+      <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css" />
+      </head>
+      <body>
     <form action="" method="post" name="loginForm">
       <table class="login-box">
         <tr>

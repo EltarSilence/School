@@ -28,7 +28,7 @@
         <a href="login.php" target="_blank">Login</a>
       </li>
       <li>
-        <a href="logout.php" target="_blank">Logout</a>
+        <a href="logout.php">Logout</a>
       </li>
       <li>
         <a href="elenco.php" target="_blank">Elenco</a>
