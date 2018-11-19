@@ -6,6 +6,7 @@
     <b>Errore:</b> Sei gi&agrave; loggato.
     </div>';
     header("Location: homepage.php");
+    die();
   }
 ?>
 
@@ -38,7 +39,7 @@
         $password = $_POST['pwd'];
         $utente = new Utente('utenti.csv');
 
-        if ($utente->login($username, $password)){
+        if ($utente->login($username, md5($password))){
           //loggato
           echo 'ACCESS GRANTED';
           $_SESSION['username'] = $username;
