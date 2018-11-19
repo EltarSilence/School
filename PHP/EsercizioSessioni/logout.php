@@ -1,5 +1,9 @@
 <?php
   session_start();
-  session_destroy();
+  if (isset($_SESSION['username'])){
+    session_destroy();
+  }
+
   header("Location: homepage.php");
+  die();
 ?>
