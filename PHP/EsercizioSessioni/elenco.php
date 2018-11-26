@@ -5,7 +5,7 @@
     Tramite addizioni reiterate calcolo il valore totale
     Tramite i metodi della classe estraggo i vari dati dei prodotti
   */
-  
+
   require 'Prodotto.php';
 ?>
 <html>
@@ -77,7 +77,7 @@
             <td>'.$p->getGiacenza().'</td>
           </tr>
           <tr>
-            <td colspan="2"><img src="img/'.$p->getImmagine().'"></td>
+            <td colspan="2"><img src="'.$p->getImmagine().'"></td>
           </tr>
           </table>';
         }

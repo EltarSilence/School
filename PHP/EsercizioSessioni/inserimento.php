@@ -33,7 +33,7 @@
     ?>
     <a href="homepage.php">Torna alla homepage</a><br>
     <a href="elenco.php">Elenco prodotti</a><br>
-    <form method="get" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
       <table class="login-box">
         <tr>
           <td>Nome Prodotto</td>
@@ -53,33 +53,54 @@
         </tr>
         <tr>
           <td>Percorso Immagine</td>
-          <td><input name="immagineP" /></td>
+          <td><input type="file" name="immagineP" /></td>
         </tr>
         <tr>
           <td><input type="submit" value="Inserisci prodotto" /></td>
         </tr>
+         <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
       </table>
     </form>
 
     <?php
 
-    if (isset($_GET['nomeP'])) {
-      if ($_GET['nomeP'] == "" || $_GET['genereP'] == "" || $_GET['prezzoP'] == "" || $_GET['giacenzaP'] == "" || $_GET['immagineP'] == "") {
+    if (isset($_POST['nomeP'])) {
+      if ($_POST['nomeP'] == "" || $_POST['genereP'] == "" || $_POST['prezzoP'] == "" || $_POST['giacenzaP'] == "") {
         //dati non validi
         echo '<div class="error">Impossibile inserire il prodotto: dati errati</div>';
         die();
       }
+      $ts = new DateTime();
+
+      $nome_file = $_FILES['immagineP']['name'];
+      $estensione = '.'.explode('.', $nome_file)[1];
+
+      $uploaddir = 'img/';
+      //$link = 'img'.$ts->getTimestamp().$estensione;
+      $uploadfile = $uploaddir.'img'.$ts->getTimestamp().$estensione;
+
+      if (move_uploaded_file($_FILES['immagineP']['tmp_name'], $uploadfile)) {
+          echo "File is valid, and was successfully uploaded.\n";
+
+          $prodotto = new Prodotto();
+          $prodotto->init($_POST['nomeP'],
+          $_POST['genereP'], $_POST['prezzoP'],
+          $_POST['giacenzaP'], $uploadfile);
+          $f = fopen('prodotti.csv', 'a');
+          fwrite($f, $prodotto->returnCSV(',')."\n");
+          fclose($f);
+
+          echo "Prodotto ".$prodotto->getNome()." inserito!<br>";
+          echo '<a href="elenco.php">Guarda l\'elenco</a>';
 
 
-      $prodotto = new Prodotto();
-      $prodotto->init($_GET['nomeP'], $_GET['genereP'], $_GET['prezzoP'], $_GET['giacenzaP'], $_GET['immagineP']);
+      }
+      else {
+          echo "Possibile attacco tramite file upload!\n";
+      }
 
-      $f = fopen('prodotti.csv', 'a');
-      fwrite($f, $prodotto->returnCSV(',')."\n");
-      fclose($f);
 
-      echo "Prodotto ".$prodotto->getNome()." inserito!<br>";
-      echo '<a href="elenco.php">Guarda l\'elenco</a>';
+
     }
 
 ?>
