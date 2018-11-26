@@ -1,4 +1,8 @@
 <?php
+/*
+  Se e' gia' loggato non fa loggare e reindirizza a homepage
+  Tramite il metodo della classe verifico se il login va a buon fine
+*/
   require "Utente.php";
   session_start();
   if (isset($_SESSION['username'])){
@@ -41,7 +45,6 @@
 
         if ($utente->login($username, md5($password))){
           //loggato
-          echo 'ACCESS GRANTED';
           $_SESSION['username'] = $username;
           header("Location: inserimento.php");
         }

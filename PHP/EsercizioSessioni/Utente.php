@@ -1,5 +1,12 @@
 <?php
 
+/*
+    CSV:
+    NOME,COGNOME,EMAIL,USERNAME,PASSWORD
+    La password su CSV e' obfuscata in MD5 per ragioni di sicurezza
+    (anche se non e' piu' sicuro)
+*/
+
   class Utente {
 
     private $nome;

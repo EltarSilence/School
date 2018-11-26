@@ -5,39 +5,43 @@
   </head>
   <body>
     <?php
-      $logged = false;
-      session_start();
+    session_start();
+    include 'bar.php';
+    /*
+      Se non e' loggato, avvisa che non tutte le funzioni sono disponibili
+      Mostra tutte le funzionalita' in base al livello di autorizzazioni
+    */
+
       if (!isset($_SESSION['username'])) {
-        echo '<div class="warning">
-        Attenzione:
-        Devi effettuare il login per inserire i prodotti.
-        <a href="login.php">Vai qui</a>
-        </div>';
+        $logged = false;
       }
       else {
         $logged = true;
       }
     ?>
     <div class="page">
-      <h4>Benvenuto nella Home Page.</h4>
+      <h4>Home Page</h4>
       Da qui puoi accedere a tutte le funzionalit&agrave;
       del sito.
     </div>
     <ul>
       <li>
-        <a href="login.php" target="_blank">Login</a>
-      </li>
-      <li>
-        <a href="logout.php">Logout</a>
-      </li>
-      <li>
-        <a href="elenco.php" target="_blank">Elenco</a>
+        <a href="elenco.php">Elenco</a>
       </li>
       <?php
         if ($logged){
-          echo '<li>
-            <a href="inserimento.php" target="_blank">Inserimento</a>
+          echo '
+          <li>
+            <a href="inserimento.php">Inserimento</a>
+          </li>
+          <li>
+          <a href="logout.php">Logout</a>
           </li>';
+        }
+        else {
+          echo '<li>
+        <a href="login.php">Login</a>
+      </li>';
         }
       ?>
     </ul>

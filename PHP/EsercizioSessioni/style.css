@@ -1,3 +1,13 @@
+.head {
+  width: 25%;
+  border-radius: 8px;
+  padding: 5px;
+  border: solid 2px orange;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+}
+
 .error {
   width: 50%;
   border-radius: 5px;
@@ -14,7 +24,7 @@
   padding: 5px;
   border: solid 2px black;
   font-weight: bold;
-  color: white;
+  color: black;
   background-color: #CCCC00;
 }
 
@@ -28,8 +38,25 @@
   background-color: #9ACD32;
 }
 
+td {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right:3px;
+}
+
 .login-box {
   padding: 10px;
   border: solid 2px black;
   border-radius: 5px;
+}
+
+.product-box {
+  padding: 8px;
+  border: solid 2px blue;
+  border-radius: 3px;
+}
+
+.icona {
+  width: 16px;
+  height: 16px;
 }
