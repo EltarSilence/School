@@ -24,27 +24,14 @@
       Da qui puoi accedere a tutte le funzionalit&agrave;
       del sito.
     </div>
-    <ul>
-      <li>
-        <a href="elenco.php">Elenco</a>
-      </li>
       <?php
         if ($logged){
-          echo '
-          <li>
-            <a href="inserimento.php">Inserimento</a>
-          </li>
-          <li>
-          <a href="logout.php">Logout</a>
-          </li>';
+          //mostra inserimento e logout
         }
         else {
-          echo '<li>
-        <a href="login.php">Login</a>
-      </li>';
+          //mostra login
         }
       ?>
-    </ul>
 
 
   </body>

@@ -7,6 +7,7 @@
   */
 
   require 'Prodotto.php';
+  include 'bar.php';
 ?>
 <html>
 <head>
@@ -55,36 +56,36 @@
   <?php
     if (isset($_GET['genere'])) {
       $valore_totale = 0;
-      foreach ($all_products as $p) {
-        $valore_totale += $p->getPrezzo()*$p->getGiacenza();
 
-        if ($_GET['genere'] == $p->getGenere()){
+      for ($i=0; $i<count($all_products); $i++){
+        $valore_totale += $all_products[$i]->getPrezzo()*$all_products[$i]->getGiacenza();
+
+        if ($_GET['genere'] == $all_products[$i]->getGenere()){
           echo '<table class="product-box">
           <tr>
             <td>Nome prodotto</td>
-            <td>'.$p->getNome().'</td>
+            <td>'.$all_products[$i]->getNome().'</td>
           </tr>
           <tr>
             <td>Genere</td>
-            <td>'.$p->getGenere().'</td>
+            <td>'.$all_products[$i]->getGenere().'</td>
           </tr>
           <tr>
             <td>Prezzo</td>
-            <td>'.$p->getPrezzo().'</td>
+            <td>'.$all_products[$i]->getPrezzo().'</td>
           </tr>
           <tr>
             <td>Giacenza</td>
-            <td>'.$p->getGiacenza().'</td>
+            <td>'.$all_products[$i]->getGiacenza().'</td>
           </tr>
           <tr>
-            <td colspan="2"><img src="'.$p->getImmagine().'"></td>
+            <td colspan="2"><img src="'.$all_products[$i]->getImmagine().'"></td>
           </tr>
           </table>';
-        }
-
       }
+    }
 
-      echo '<div class="success">Valore totale magazzino: '.$valore_totale.' &euro;</div>';
+      echo '<div class="product-box">Valore totale magazzino: '.$valore_totale.' &euro;</div>';
 
     }
 

@@ -1,3 +1,39 @@
+body {
+  background: #b3dced;
+  background: -moz-linear-gradient(left, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+  background: -webkit-linear-gradient(left, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+  background: -o-linear-gradient(left, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+  background: -ms-linear-gradient(left, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+  background: linear-gradient(to right, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=1 );
+}
+
+
+ul {
+    background-color: #ff9900;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #146eb4;
+}
+
 .head {
   width: 25%;
   border-radius: 8px;
@@ -10,6 +46,7 @@
 
 .error {
   width: 50%;
+  height: 20px;
   border-radius: 5px;
   padding: 5px;
   border: solid 2px black;
@@ -20,6 +57,7 @@
 
 .warning {
   width: 50%;
+  height: 20px;
   border-radius: 5px;
   padding: 5px;
   border: solid 2px black;
@@ -30,6 +68,7 @@
 
 .success {
   width: 50%;
+  height: 20px;
   border-radius: 5px;
   padding: 5px;
   border: solid 2px black;
@@ -51,6 +90,14 @@ td {
 }
 
 .product-box {
+  background: #ffaf4b;
+  background: -moz-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -webkit-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -o-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -ms-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: linear-gradient(to right, #ffaf4b 0%, #ff920a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
+  float:left;
   padding: 8px;
   border: solid 2px blue;
   border-radius: 3px;
