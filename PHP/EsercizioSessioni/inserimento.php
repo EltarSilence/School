@@ -32,8 +32,6 @@
   else {
     //loggato
     ?>
-    <a href="homepage.php">Torna alla homepage</a><br>
-    <a href="elenco.php">Elenco prodotti</a><br>
     <form method="POST" action="" enctype="multipart/form-data">
       <table class="login-box">
         <tr>

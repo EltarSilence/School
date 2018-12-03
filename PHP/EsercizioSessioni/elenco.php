@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="homepage.php">Torna alla homepage</a>
   <form action="" method="get">
     <table class="login-box">
       <tr>

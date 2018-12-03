@@ -41,29 +41,30 @@
     if (empty($foundProducts)){
       echo '<div class="error">Nessun prodotto trovato: assicurarsi che le parole di ricerca siano corrette.</div>';
     }
-
-    for ($i=0; $i<count($foundProducts); $i++){
-      echo '<table class="product-box">
-      <tr>
-        <td class="tit">Nome prodotto</td>
-        <td>'.$foundProducts[$i]->getNome().'</td>
-      </tr>
-      <tr>
-        <td class="tit">Genere</td>
-        <td>'.$foundProducts[$i]->getGenere().'</td>
-      </tr>
-      <tr>
-        <td class="tit">Prezzo</td>
-        <td>'.$foundProducts[$i]->getPrezzo().' &euro;</td>
-      </tr>
-      <tr>
-        <td class="tit">Giacenza</td>
-        <td>'.$foundProducts[$i]->getGiacenza().'</td>
-      </tr>
-      <tr>
-        <td colspan="2"><img class="product-img" src="'.$foundProducts[$i]->getImmagine().'"></td>
-      </tr>
-      </table>';
+    else {
+      for ($i=0; $i<count($foundProducts); $i++){
+        echo '<table class="product-box">
+        <tr>
+          <td class="tit">Nome prodotto</td>
+          <td>'.$foundProducts[$i]->getNome().'</td>
+        </tr>
+        <tr>
+          <td class="tit">Genere</td>
+          <td>'.$foundProducts[$i]->getGenere().'</td>
+        </tr>
+        <tr>
+          <td class="tit">Prezzo</td>
+          <td>'.$foundProducts[$i]->getPrezzo().' &euro;</td>
+        </tr>
+        <tr>
+          <td class="tit">Giacenza</td>
+          <td>'.$foundProducts[$i]->getGiacenza().'</td>
+        </tr>
+        <tr>
+          <td colspan="2"><img class="product-img" src="'.$foundProducts[$i]->getImmagine().'"></td>
+        </tr>
+        </table>';
+      }
     }
   }
 ?>
