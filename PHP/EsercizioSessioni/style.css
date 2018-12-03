@@ -103,6 +103,11 @@ td {
   border-radius: 3px;
 }
 
+.product-img {
+  width: 300px;
+  height: 300px;
+}
+
 .icona {
   width: 16px;
   height: 16px;

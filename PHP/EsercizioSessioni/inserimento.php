@@ -79,9 +79,9 @@
       $uploaddir = 'img/';
       //$link = 'img'.$ts->getTimestamp().$estensione;
       $uploadfile = $uploaddir.'img'.$ts->getTimestamp().$estensione;
-      var_dump($_FILES['immagineP']['tmp_name']);
+
       if (move_uploaded_file($_FILES['immagineP']['tmp_name'], $uploadfile)) {
-          echo "File is valid, and was successfully uploaded.\n";
+          echo "Caricamento OK.\n";
 
           $prodotto = new Prodotto();
           $prodotto->init($_POST['nomeP'],

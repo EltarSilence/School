@@ -79,7 +79,7 @@
             <td>'.$all_products[$i]->getGiacenza().'</td>
           </tr>
           <tr>
-            <td colspan="2"><img src="'.$all_products[$i]->getImmagine().'"></td>
+            <td colspan="2"><img class="product-img" src="'.$all_products[$i]->getImmagine().'"></td>
           </tr>
           </table>';
       }
