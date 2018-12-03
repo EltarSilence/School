@@ -63,19 +63,19 @@
         if ($_GET['genere'] == $all_products[$i]->getGenere()){
           echo '<table class="product-box">
           <tr>
-            <td>Nome prodotto</td>
+            <td class="tit">Nome prodotto</td>
             <td>'.$all_products[$i]->getNome().'</td>
           </tr>
           <tr>
-            <td>Genere</td>
+            <td class="tit">Genere</td>
             <td>'.$all_products[$i]->getGenere().'</td>
           </tr>
           <tr>
-            <td>Prezzo</td>
-            <td>'.$all_products[$i]->getPrezzo().'</td>
+            <td class="tit">Prezzo</td>
+            <td>'.$all_products[$i]->getPrezzo().' &euro;</td>
           </tr>
           <tr>
-            <td>Giacenza</td>
+            <td class="tit">Giacenza</td>
             <td>'.$all_products[$i]->getGiacenza().'</td>
           </tr>
           <tr>
@@ -85,7 +85,7 @@
       }
     }
 
-      echo '<div class="product-box">Valore totale magazzino: '.$valore_totale.' &euro;</div>';
+      echo '<div class="product-box">Valore totale magazzino: '.number_format($valore_totale,2,",",".").' &euro;</div>';
 
     }
 

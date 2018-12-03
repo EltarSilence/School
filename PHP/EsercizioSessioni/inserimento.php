@@ -17,7 +17,7 @@
 
 <html>
   <head>
-    <title>Login</title>
+    <title>Inserimento Prodotti</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>

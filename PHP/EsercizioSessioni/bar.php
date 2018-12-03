@@ -2,7 +2,7 @@
   <li><a href="homepage.php">Homepage</a></li>
   <li><a href="inserimento.php">Inserimento</a></li>
   <li><a href="elenco.php">Magazzino</a></li>
-  <li><a href="#">Negozio</a></li>
+  <li><a href="buy.php">Negozio</a></li>
 </ul>
 
 <?php
