@@ -7,6 +7,8 @@
   */
 
   session_start();
+  //if (!isset($_SESSION['username'])) header("HTTP/1.0 403");
+
   require 'Prodotto.php';
   include 'bar.php';
   if (isset($_SESSION['username'])) {

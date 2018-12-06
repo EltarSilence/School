@@ -3,15 +3,15 @@
   <li><a href="inserimento.php">Inserimento</a></li>
   <li><a href="elenco.php">Magazzino</a></li>
   <li><a href="buy.php">Negozio</a></li>
-</ul>
-
 <?php
-/*
+
   if (isset($_SESSION['username'])){
-    echo ' <img class="icona" src="img/usericon.png"> Benvenuto, '.$_SESSION['username'];
+    echo '<li><a href="inserimento.php">Inserimento</a></li>';
+    echo '<li><a href="logout.php">Logout</a></li>';
   }
   else {
-    echo '<div class="head">Non sei loggato!</div>';
+    echo '<li><a href="login.php">Login</a></li>';
   }
-  */
+
 ?>
+</ul>

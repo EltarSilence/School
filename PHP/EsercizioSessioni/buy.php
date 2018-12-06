@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require 'bar.php';
   require 'Prodotto.php';
 ?>

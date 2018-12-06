@@ -5,7 +5,7 @@
     Tramite addizioni reiterate calcolo il valore totale
     Tramite i metodi della classe estraggo i vari dati dei prodotti
   */
-
+  session_start();
   require 'Prodotto.php';
   include 'bar.php';
 ?>
