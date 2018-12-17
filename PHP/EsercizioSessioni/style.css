@@ -84,7 +84,7 @@ li a:hover {
 td {
   padding-top: 3px;
   padding-bottom: 3px;
-  padding-right:3px;
+  padding-right: 3px;
 }
 
 .tit {
@@ -166,4 +166,22 @@ input[type=submit] {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.buy {
+  width: 100%;
+  -webkit-transition-duration: 0.4s;
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.buy:hover {
+  background-color: blue;
+  color: white;
 }

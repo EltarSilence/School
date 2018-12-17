@@ -64,6 +64,9 @@
         <tr>
           <td colspan="2"><img class="product-img" src="'.$foundProducts[$i]->getImmagine().'"></td>
         </tr>
+        <tr>
+          <td colspan="2"><button class="buy">Aggiungi al carrello</button></td>
+        </tr>
         </table>';
       }
     }
