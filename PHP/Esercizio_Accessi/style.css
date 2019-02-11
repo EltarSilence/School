@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+.body {
+    padding: 50px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 
