@@ -6,9 +6,6 @@
     die();
   }
   require 'config.php';
-
-
-
 ?>
 <html>
   <head>
@@ -20,7 +17,7 @@
       include 'menu.php';
       if (isset($_GET['er'])){
         if ($_GET['er'] == "adm"){
-        echo '<div class="error"><b>Devi essere amministratore per creare una nuova utenza</div>';
+          echo '<div class="error"><b>Devi essere amministratore per visionare questa pagina</div>';
         }
       }
 

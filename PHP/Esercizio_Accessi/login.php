@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once 'config.php';
   require 'Utente.php';
 ?>
 <html>
@@ -27,6 +28,11 @@
       $utente->setPassword($_POST['pwd']);
       if($utente->login()){
         $_SESSION['nickname'] = $utente->getNickname();
+        $nick = $_SESSION['nickname'];
+        $now = date('Y-m-d H:i:s');
+        $sql = "INSERT INTO accessi (user, inizio) VALUES ('$nick', '$now')";
+        var_dump($sql);
+        $result = $conn->query($sql);
         header('Location: index.php');
       }
     }
