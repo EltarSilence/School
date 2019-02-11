@@ -7,16 +7,8 @@
   }
   require 'config.php';
 
-  if (isset($_POST['update'])){
-    $cgnm = $_POST['cognome'];
-    $nome = $_POST['nome'];
-    $mail = $_POST['email'];
-    $indirizzo = $_POST['indirizzo'];
-    $ddn = $_POST['ddn'];
-    $sql = "UPDATE utenti SET cognome = '$cgnm', nome = '$nome', email = '$mail', indirizzo = '$indirizzo', ddn = '$ddn' WHERE nickname = '".$_SESSION['nickname']."'";
-    $result = $conn->query($sql);
-    echo '<div class="success"><b>Dati aggiornati con successo</div>';
-  }
+
+
 ?>
 <html>
   <head>
@@ -26,19 +18,38 @@
   <body>
     <?php
       include 'menu.php';
+      if (isset($_GET['er'])){
+        if ($_GET['er'] == "adm"){
+        echo '<div class="error"><b>Devi essere amministratore per creare una nuova utenza</div>';
+        }
+      }
 
       $sql = "SELECT * FROM utenti WHERE nickname = '".$_SESSION['nickname']."'";
       $result = $conn->query($sql);
       while($row = $result->fetch_assoc()){ $user = $row; }
     ?>
     <div class="body">
+
+      <?php
+        if (isset($_POST['update'])){
+          $cgnm = $_POST['cognome'];
+          $nome = $_POST['nome'];
+          $mail = $_POST['email'];
+          $indirizzo = $_POST['indirizzo'];
+          $ddn = $_POST['ddn'];
+          $sql = "UPDATE utenti SET cognome = '$cgnm', nome = '$nome', email = '$mail', indirizzo = '$indirizzo', ddn = '$ddn' WHERE nickname = '".$_SESSION['nickname']."'";
+          $result = $conn->query($sql);
+          echo '<div class="success"><b>Dati aggiornati con successo</div>';
+        }
+
+      ?>
       <h2>I tuoi dati personali</h2>
       <form action="" method="post">
         <table class="login-box">
           <tr>
             <?php
               if ($user['isAdmin']){
-                echo '<td colspan="2" align="center">(L\'utente &egrave; amministratore)</td>';
+                echo '<td colspan="2" align="center">(Sei un amministratore)</td>';
               }
             ?>
 

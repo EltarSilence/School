@@ -3,6 +3,7 @@
 
   <?php
     if (isset($_SESSION['nickname'])) {
+      echo '<li><a href="newuser.php">Nuovo Utente</a></li>';
       echo '<li><a href="logout.php">Esci</a></li>';
     }
     else {
