@@ -39,7 +39,12 @@
          echo "<tr><td>Non ci sono valori da mostrare</td></tr>";
         }
         while($row = $result->fetch_assoc()){
-          echo '<tr><td><b>'.$_GET['user'].'</b></td><td>Login: <b>'.$row['inizio'].'</b> Logout: <b>'.$row['fine'].'</b></td></tr>';
+          if (!is_null($row['fine'])) {
+            echo '<tr><td><b>'.$_GET['user'].'</b></td><td>Login: <b>'.$row['inizio'].'</b> Logout: <b>'.$row['fine'].'</b></td></tr>';
+          }
+          else {
+            echo '<tr><td><b>'.$_GET['user'].'</b></td><td>Login: <b>'.$row['inizio'].'</b> - <b>Utente loggato ora</b></td></tr>';
+          }
         }
         echo '</table>';
       }
