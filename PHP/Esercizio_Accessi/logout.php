@@ -1,4 +1,8 @@
 <?php
+/*
+  DISTRUGGE LA SESSIONE 
+  MODIFICA IL DATABASE
+*/
 require 'config.php';
 session_start();
 session_destroy();

@@ -1,4 +1,10 @@
 <?php
+/*
+  SE L'UTENTE NON E' LOGGATO
+    MOSTRA FORM LOGIN
+  ALTRIMENTI
+    MOSTRA INFORMAZIONI E FORM DI UPDATE
+*/
   session_start();
 
   if (!isset($_SESSION['nickname'])){
@@ -40,7 +46,7 @@
         }
 
       ?>
-      <h2>I tuoi dati personali</h2>
+      <h2><img src="content/edit.png" /> I tuoi dati personali</h2>
       <form action="" method="post">
         <table class="login-box">
           <tr>

@@ -1,4 +1,11 @@
 <?php
+  /*
+    SE NON E' AMMINISTRATORE
+      RITORNA AD INDEX
+    ALTRIMENTI
+      MOSTRA FORM DI REGISTRAZIONE
+      ESEGUE QUERY DI INSERIMENTO
+  */
   session_start();
   require 'config.php';
   $sql = "SELECT * FROM utenti WHERE nickname = '".$_SESSION['nickname']."'";
@@ -50,7 +57,7 @@
           <tr>
             <?php
               if ($user['isAdmin']){
-                echo '<td colspan="2" align="center">(Sei un amministratore, puoi inserire nuovi utenti)</td>';
+                echo '<td colspan="2" align="center"><img src="content/add.png" width="15px" height="15px" /> (Sei un amministratore, puoi inserire nuovi utenti)</td>';
               }
             ?>
           </tr>

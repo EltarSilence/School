@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Feb 11, 2019 alle 17:04
--- Versione del server: 10.1.37-MariaDB
--- Versione PHP: 7.2.12
+-- Creato il: Feb 18, 2019 alle 13:12
+-- Versione del server: 10.1.30-MariaDB
+-- Versione PHP: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `esercizio_1`
 --
+CREATE DATABASE IF NOT EXISTS `esercizio_1` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `esercizio_1`;
 
 -- --------------------------------------------------------
 
@@ -30,10 +32,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accessi` (
   `id` int(5) NOT NULL,
-  `id_ut` int(5) NOT NULL,
+  `id_ut` text NOT NULL,
   `inizio` datetime NOT NULL,
-  `fine` datetime NOT NULL
+  `fine` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `accessi`
+--
+
+INSERT INTO `accessi` (`id`, `id_ut`, `inizio`, `fine`) VALUES
+(15, 'ricky', '2019-02-18 12:19:16', '2019-02-18 12:30:29'),
+(16, 'eltar', '2019-02-18 12:30:38', '2019-02-18 12:36:33'),
+(17, 'eltar', '2019-02-18 12:37:04', '2019-02-18 12:38:41'),
+(18, 'albi', '2019-02-18 12:38:53', '2019-02-18 12:39:46'),
+(19, 'eltar', '2019-02-18 12:40:11', '2019-02-18 12:42:01'),
+(20, 'zola', '2019-02-18 12:42:09', '2019-02-18 12:53:22'),
+(21, 'eltar', '2019-02-18 12:56:50', '2019-02-18 13:05:55');
 
 -- --------------------------------------------------------
 
@@ -58,7 +73,10 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`id`, `cognome`, `nome`, `nickname`, `password`, `email`, `indirizzo`, `ddn`, `isAdmin`) VALUES
-(1, 'Rizza', 'Giovanni', 'eltar', 'siis', 'eltarsilence@gmail.com', 'Via Verdi 53', '2000-08-16', 1);
+(1, 'Rizza', 'Giovanni', 'eltar', 'siis', 'eltarsilence@gmail.com', 'Via Verdi 53', '2000-08-16', 1),
+(2, 'Siliqua', 'Riccardo', 'ricky', 'siis', 'laal@gmail.com', 'via bione 33', '2000-12-21', 1),
+(3, 'Canipari', 'Alberto', 'albi', 'suus', 'alberto@gmail.com', 'via tosse 15', '2000-08-05', 0),
+(4, 'Zola', 'Francesco', 'zola', '1234', 'francesco.zola79@gmail.com', 'via del prof 92', '1990-01-01', 1);
 
 --
 -- Indici per le tabelle scaricate
@@ -68,8 +86,7 @@ INSERT INTO `utenti` (`id`, `cognome`, `nome`, `nickname`, `password`, `email`, 
 -- Indici per le tabelle `accessi`
 --
 ALTER TABLE `accessi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_ut` (`id_ut`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indici per le tabelle `utenti`
@@ -85,23 +102,13 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `accessi`
 --
 ALTER TABLE `accessi`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT per la tabella `utenti`
 --
 ALTER TABLE `utenti`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Limiti per le tabelle scaricate
---
-
---
--- Limiti per la tabella `accessi`
---
-ALTER TABLE `accessi`
-  ADD CONSTRAINT `accessi_ibfk_1` FOREIGN KEY (`id_ut`) REFERENCES `utenti` (`id`);
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -14,6 +14,7 @@
 
 
   <li style="float: right;">
+
     <a href="index.php">
     <?php
     if (isset($_SESSION['nickname'])){

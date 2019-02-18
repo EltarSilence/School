@@ -1,4 +1,12 @@
 <?php
+  /*
+    SE E' GIA' LOGGATO
+      MOSTRA INDEX
+    ALTRIMENTI
+      MOSTRA FORM
+      AL SUBMIT ESEGUE QUERY DI ACCESSO
+      APRE LA SESSIONE
+  */
   session_start();
   require_once 'config.php';
   require 'Utente.php';
@@ -26,20 +34,28 @@
       $utente = new Utente();
       $utente->setNickname($_POST['unm']);
       $utente->setPassword($_POST['pwd']);
+
       if($utente->login()){
         $_SESSION['nickname'] = $utente->getNickname();
         $nick = $_SESSION['nickname'];
         $now = date('Y-m-d H:i:s');
-        $sql = "INSERT INTO accessi (user, inizio) VALUES ('$nick', '$now')";
-        var_dump($sql);
+        $sql = "INSERT INTO accessi (id_ut, inizio) VALUES ('$nick', '$now')";
         $result = $conn->query($sql);
         header('Location: index.php');
+      }
+      else {
+        echo '<div class="error"><b>Credenziali errate. Riprovare.</div>';
       }
     }
     else {
       ?>
       <form action="" method="post" name="loginForm">
         <table class="login-box">
+          <tr>
+            <td colspan="2">
+              <img src="content/lock.png"/>
+            </td>
+          </tr>
           <tr>
             <td>Username</td>
             <td><input name="unm" /></td>
